@@ -23,12 +23,15 @@ def hangman(word):
     while wrong < len(stages) - 1:
         print("\n")
     
-        message = "Guess a letter" 
+        message = "Guess a letter: " 
         character = input(message) 
     
         if character in letters:
-            cind = letters \.index(character)
+            cind = letters \
+                   .index(character)
+            
             board[cind] = character
+            
             letters[cind] = '$'
     
         else:
@@ -50,11 +53,13 @@ def hangman(word):
             break
       
     if not win:
-        print("\n".join(stages[0: \wrong))
+        print("\n"
+              .join(stages[0: \
+              wrong]))
         
         print("You lose! It was {}.".format(word))
                                
-hangman("Montreal")
+hangman("soccer")
                                
                                
                                
