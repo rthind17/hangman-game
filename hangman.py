@@ -19,3 +19,30 @@ def hangman(word):
     win = False #keeps track of if the players has won the game
     
     print("Welcome to Hangman")
+    
+while wrong < len(stages) - 1:
+    
+    print("\n")
+    
+    message = "Guess a letter" 
+    character = input(message) 
+    
+    if character in letters:
+        cind = letters \.index(character)
+        board[cind] = character
+        letters[cind] = '$'
+    
+    else:
+        wrong += 1
+    
+    print((" ".join(board)))
+    
+    e = wrong + 1
+   
+    print("\n".join(stages[0: e]))
+    
+    if "__" not in board:
+        print("You win!")
+        print(" ".join(board))
+        win = True
+        break
