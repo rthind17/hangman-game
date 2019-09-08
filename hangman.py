@@ -20,29 +20,47 @@ def hangman(word):
     
     print("Welcome to Hangman")
     
-while wrong < len(stages) - 1:
+    while wrong < len(stages) - 1:
+        print("\n")
     
-    print("\n")
+        message = "Guess a letter" 
+        character = input(message) 
     
-    message = "Guess a letter" 
-    character = input(message) 
+        if character in letters:
+            cind = letters \.index(character)
+            board[cind] = character
+            letters[cind] = '$'
     
-    if character in letters:
-        cind = letters \.index(character)
-        board[cind] = character
-        letters[cind] = '$'
+        else:
+            wrong += 1
     
-    else:
-        wrong += 1
+        print((" ".join(board)))
     
-    print((" ".join(board)))
-    
-    e = wrong + 1
+        e = wrong + 1
    
-    print("\n".join(stages[0: e]))
+        print("\n".join(stages[0: e]))
     
-    if "__" not in board:
-        print("You win!")
-        print(" ".join(board))
-        win = True
-        break
+        if "__" not in board:
+            
+            print("You win!")
+            
+            print(" ".join(board))
+            
+            win = True
+            break
+      
+    if not win:
+        print("\n".join(stages[0: \wrong))
+        
+        print("You lose! It was {}.".format(word))
+                               
+hangman("Montreal")
+                               
+                               
+                               
+                               
+                               
+                               
+        
+          
+  
